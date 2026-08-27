@@ -156,7 +156,7 @@ public class AuthController : ControllerBase
         {
             HttpOnly = true, // XSS védelem: A kliensoldali JavaScript nem férhet hozzá
             Secure = true,   // Csak HTTPS kapcsolaton keresztül küldi át (localhoston is működik általában)
-            SameSite = SameSiteMode.Strict, // CSRF védelem
+            SameSite = SameSiteMode.None, // CSRF védelem
             Expires = DateTime.UtcNow.AddDays(7)
         };
 
