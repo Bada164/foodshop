@@ -26,7 +26,7 @@ builder.Services.AddCors((options) =>
             });
         options.AddPolicy("ProdCors", (corsBuilder) =>
             {
-                corsBuilder.WithOrigins("musical-gaufre-bc836c.netlify.app")
+                corsBuilder.WithOrigins("https://musical-gaufre-bc836c.netlify.app")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials();
