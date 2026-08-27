@@ -1,5 +1,5 @@
 # 1. Építési fázis (Build)
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
 # Másoljuk a csproj fájlt és telepítjük a függőségeket
@@ -16,7 +16,7 @@ FROM build AS publish
 RUN dotnet publish "foodshop.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # 3. Futási fázis (Runtime)
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
 WORKDIR /app
 EXPOSE 8080
 
